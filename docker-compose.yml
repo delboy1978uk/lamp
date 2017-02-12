@@ -5,12 +5,18 @@ apache:
     ports:
         - 80:80
         - 443:443
-    volumes:
-        - ./:/var/www/html
+    volumes_from:
+        - app
 
 php:
     build: ./php
     expose:
         - 9000
+    volumes_from:
+        - app
+
+app:
+    image: httpd:latest
     volumes:
         - ./:/var/www/html
+    command: "echo true"
