@@ -1,5 +1,7 @@
 apache:
     build: ./httpd
+    links:
+        - php
     ports:
         - 80:80
         - 443:443
