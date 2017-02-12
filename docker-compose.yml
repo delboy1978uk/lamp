@@ -9,7 +9,7 @@ apache:
         - ./:/var/www/html
 
 php:
-    image: php:5.6.30-fpm
+    build: ./php
     expose:
         - 9000
     volumes:
