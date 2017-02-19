@@ -15,12 +15,12 @@ php:
     volumes_from:
         - app
     links:
-        - mysql
+        - mariadb
 
 app:
     image: httpd:latest
     volumes:
-        - ./:/var/www/html
+        - ./www:/var/www/html
     command: "echo true"
 
 mariadb:
@@ -28,10 +28,10 @@ mariadb:
     volumes_from:
         - data
     environment:
-        MYSQL_ROOT_PASSWORD: "[123456]"
-        MYSQL_DATABASE: awesome.dev
+        MYSQL_ROOT_PASSWORD: "12345"
+        MYSQL_DATABASE: awesome
         MYSQL_USER: dbuser
-        MYSQL_PASSWORD: "[123456]"
+        MYSQL_PASSWORD: "12345"
 
 data:
     image: mariadb:latest
