@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+    <div class="container tc">
+        <div class="text-center">
             <img src="img/skull_and_crossbones.png"/>
         </div>
-      </div>
-    <h1 style="text-align: center;"><br />Hello, it is <?= date('d/m/Y H:i'); ?></h1>
+        <br />
+    <h1 class="text-center">Hello, it is <?= date('d/m/Y H:i'); ?></h1>
     <br class="clearfix">
 
     <?php
@@ -28,11 +27,11 @@
 
     if (empty($tables)) {
 
-        echo '<p class="lead">There are no tables in database ' . $database . '.</p>';
+        echo '<p class="lead text-center">There are no tables in database ' . $database . '.</p>';
 
     } else {
 
-        echo '<p class="lead">Database ' . $database . ' has the following tables:</p>';
+        echo '<p class="lead text-center">Database ' . $database . ' has the following tables:</p>';
         echo '<ul>';
 
         foreach ($tables as $table) {

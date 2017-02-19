@@ -1,5 +1,5 @@
 apache:
-    build: ./httpd
+    build: ./build/httpd
     links:
         - php
     ports:
@@ -9,7 +9,7 @@ apache:
         - app
 
 php:
-    build: ./php
+    build: ./build/php
     expose:
         - 9000
     volumes_from:
@@ -20,7 +20,7 @@ php:
 app:
     image: httpd:latest
     volumes:
-        - ./www:/var/www/html
+        - ./:/var/www/html
     command: "echo true"
 
 mariadb:
