@@ -29,6 +29,9 @@ RUN docker-php-ext-install imap
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr
 RUN docker-php-ext-install gd exif pdo curl dom pdo_mysql iconv intl mcrypt hash phar session snmp sockets xml xmlreader xmlrpc xmlwriter xsl zip
 
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
+
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 

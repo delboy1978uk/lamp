@@ -32,10 +32,10 @@
     } else {
 
         echo '<p class="lead text-center">Database ' . $database . ' has the following tables:</p>';
-        echo '<ul>';
+        echo '<ul class="list-group col-md-3 col-md-offset-3">';
 
         foreach ($tables as $table) {
-            echo '<li>'.$table.'</li>';
+            echo '<li class="list-group-item">'.$table.'</li>';
         }
 
         echo '</ul>';

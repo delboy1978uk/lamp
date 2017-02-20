@@ -25,6 +25,8 @@ app:
 
 mariadb:
     image: mariadb:latest
+    volumes:
+        - ./build/data:/docker-entrypoint-initdb.d
     volumes_from:
         - data
     environment:
