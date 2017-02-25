@@ -20,6 +20,7 @@ RUN apt-get -y --no-install-recommends install openssl
 RUN apt-get -y --no-install-recommends install php5-imagick
 RUN apt-get -y --no-install-recommends install php5-xdebug
 RUN apt-get -y --no-install-recommends install snmp
+RUN apt-get -y --no-install-recommends install ssmtp
 RUN apt-get -y --no-install-recommends install wkhtmltopdf
 RUN apt-get -y --no-install-recommends install libxslt-dev
 RUN apt-get -y --no-install-recommends install zlib1g-dev
@@ -36,3 +37,4 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 COPY ./php.ini /usr/local/etc/php/php.ini
+COPY ./ssmtp.conf /etc/ssmtp/ssmtp.conf
