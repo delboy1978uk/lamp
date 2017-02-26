@@ -16,7 +16,7 @@ php:
         - app
     links:
         - mariadb
-
+        - mail
 app:
     image: httpd:latest
     volumes:
@@ -40,3 +40,9 @@ data:
     volumes:
         - /var/lib/mysql
     command: "true"
+
+mail:
+    image: mailhog/mailhog
+    ports:
+        - 1025:1025
+        - 8025:8025
