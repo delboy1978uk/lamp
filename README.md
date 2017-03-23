@@ -1,13 +1,16 @@
-#lamp
+lamp
+====
 
 A Dockerised LAMP stack
 
-####What?
+What?
+-----
 
 Docker. Magical voodoo VM tech. Install it. https://www.docker.com/community-edition<br />
 There are different drivers it can use, we like Virtualbox. Install that too. https://www.virtualbox.org/
 
-####OK, it's installed. Now what?
+OK, it's installed. Now what?
+-----------------------------
 
 This line is a one off. Create your master VM. 
 ```
@@ -21,11 +24,13 @@ eval $(docker-machine env)
 ```
 You now have a working Docker Machine.
 
-###How do I use this lib?
+How do I use this lib?
+----------------------
 
 You can use this for a single site or for multiple apps, up to you, mess with the config! Once running you'll have a fully running LAMP stack.
 
-####Apache
+Apache
+------
 
 The default host is awesome.dev (remember to add to your hosts file!), which will be on your Docker machine's IP (probably 192.168.99.100). In ./build/httpd, you will find an httpd.conf, and an httpd-vhosts.conf. Edit the files to suit, the default vhost looks like this: 
  ```apacheconfig
@@ -52,15 +57,18 @@ The default host is awesome.dev (remember to add to your hosts file!), which wil
 </VirtualHost>
 ```
 
-####PHP
+PHP
+---
 
 You can customise php.ini in build/php/php.ini. You will notice a file named ssmtp.conf. This LAMP stack uses Mailhog, so you can check all would-have-been-sent emails by going to awesome.dev:8025.<br />When connecting to the DB, MySQL host should be set to 'mariadb' and not 127.0.0.1 or localhost.
 
-####MySQL
+MySQL
+-----
 
 Put any build SQL files in build/data. Please see the sample. Note if you dont connect to DB as root you'll need to perform a grant query.
 
-###Blah blah, just tell me how to start it!
+Blah blah, just tell me how to start it!
+----------------------------------------
 
 Now you've configured your stuff, we use Docker's compose command to build it first. 
 
@@ -76,7 +84,8 @@ docker-compose up
 
 Pressing CTRL-C will close it down. 
 
-###I need to SSH in for something, but wtf?!
+I need to SSH in for something, but wtf?!
+-----------------------------------------
 
 Yes, its all little microcontainers and a bit odd. Here's what you do:
 
