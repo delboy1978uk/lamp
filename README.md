@@ -65,7 +65,7 @@ You can customise php.ini in build/php/php.ini. You will notice a file named ssm
 MySQL
 -----
 
-Put any build SQL files in build/data. Please see the sample. Note if you dont connect to DB as root you'll need to perform a grant query.
+If using only one database, fine. If using more than one, remove the database name entry from the Docker compose YAML. Put any build SQL files in build/data. Please see the sample. Note if you didn't specify a DB in the YAML you'll need to perform a grant query in your SQL.
 
 Blah blah, just tell me how to start it!
 ----------------------------------------
@@ -107,7 +107,8 @@ docker exec -it a64783df502e /bin/bash
 
 Now you can run composer or whatever you need to do. You are sort of SSH'ed in twice, one to the main Docker VM, the other the container.
 
-###Shut it down!
+Shut it down!
+-------------
 
 ```
 docker-machine stop
