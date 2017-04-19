@@ -1,42 +1,50 @@
-apache:
-    build: ./build/httpd
-    links:
-        - php
-    ports:
-        - 80:80
-        - 443:443
-    volumes_from:
-        - app
+version: '2'
 
-php:
-    build: ./build/php
-    expose:
-        - 9000
-    volumes_from:
-        - app
-    links:
-        - mariadb
+volumes:
+    db_data:
+        driver: local
 
-app:
-    image: httpd:latest
-    volumes:
-        - ./:/var/www/html
-    command: "echo true"
+services:
+    apache:
+        build: ./build/httpd
+        links:
+            - php
+        ports:
+            - 80:80
+            - 443:443
+        volumes_from:
+            - app
 
-mariadb:
-    image: mariadb:latest
-    volumes:
-        - ./build/data:/docker-entrypoint-initdb.d
-    volumes_from:
-        - data
-    environment:
-        MYSQL_ROOT_PASSWORD: "12345"
-        MYSQL_DATABASE: awesome
-        MYSQL_USER: dbuser
-        MYSQL_PASSWORD: "12345"
+    php:
+        build: ./build/php
+        expose:
+            - 9000
+        volumes_from:
+            - app
+        links:
+            - mariadb
+            - mail
 
-data:
-    image: mariadb:latest
-    volumes:
-        - /var/lib/mysql
-    command: "true"
+    app:
+        image: httpd:latest
+        volumes:
+            - ../:/var/www/html
+        command: "echo true"
+
+    mariadb:
+        image: mariadb:latest
+        volumes:
+            - ./build/data:/docker-entrypoint-initdb.d
+            - db_data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: '[123456]'
+            MYSQL_USER: dbuser
+            MYSQL_PASSWORD: '[123456]'
+        ports:
+            - 3306:3306
+
+    mail:
+        image: mailhog/mailhog
+        ports:
+            - 1025:1025
+            - 8025:8025
