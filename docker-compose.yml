@@ -17,13 +17,16 @@ services:
 
     php:
         build: ./build/php
-        expose:
+        ports:
             - 9000
+            - 9001
         volumes_from:
             - app
         links:
             - mariadb
             - mail
+        extra_hosts:
+        - "api.eggs.net:192.168.99.100"
 
     app:
         image: httpd:latest
@@ -37,10 +40,9 @@ services:
             - ./build/data:/docker-entrypoint-initdb.d
             - db_data:/var/lib/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: 12345
-            MYSQL_DATABASE: awesome
+            MYSQL_ROOT_PASSWORD: '[123456]'
             MYSQL_USER: dbuser
-            MYSQL_PASSWORD: 12345
+            MYSQL_PASSWORD: '[123456]'
         ports:
             - 3306:3306
 
@@ -49,5 +51,3 @@ services:
         ports:
             - 1025:1025
             - 8025:8025
-
-
