@@ -17,7 +17,7 @@
     <?php
     $database   = 'awesome';
     $user = 'dbuser';
-    $password = "12345";
+    $password = "[123456]";
     $host       = "mariadb";
 
     $connection = new PDO("mysql:host={$host};dbname={$database};charset=utf8", $user, $password);
