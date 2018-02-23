@@ -25,13 +25,11 @@ services:
         links:
             - mariadb
             - mail
-        extra_hosts:
-        - "api.eggs.net:192.168.99.100"
 
     app:
         image: httpd:latest
         volumes:
-            - ../:/var/www/html
+            - ./:/var/www/html
         command: "echo true"
 
     mariadb:
