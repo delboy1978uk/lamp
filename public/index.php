@@ -466,7 +466,7 @@
             background: 0 0;
         }
         h1.brand-heading{
-            font-size: 80px;
+            font-size: 70px;
         }
         html body code, html body div.code {
             color: #00ff00;
