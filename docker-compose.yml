@@ -5,7 +5,7 @@ volumes:
         driver: local
 
 services:
-    apache:
+    awesome.scot:
         build: ./build/httpd
         links:
             - php
@@ -25,9 +25,11 @@ services:
         links:
             - mariadb
             - mail
+        environment:
+            APPLICATION_ENV: 'development'
 
     app:
-        image: httpd:latest
+        image: httpd:2.4.38
         volumes:
             - ./:/var/www/html
         command: "echo true"

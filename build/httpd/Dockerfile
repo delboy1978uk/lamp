@@ -1,4 +1,4 @@
-FROM httpd:latest
+FROM httpd:2.4.38
 
 ENV DEBIAN_FRONTEND noninteractive
 
