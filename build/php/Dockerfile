@@ -1,4 +1,4 @@
-FROM delboy1978uk/php71
+FROM delboy1978uk/php73
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/
