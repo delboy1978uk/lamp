@@ -14,21 +14,27 @@ docker-machine create --driver virtualbox default
 Start it up. Display the environment variables. Use those variables in your terminal session.
 ```
 docker-machine start
-docker-machine env
-eval $(docker-machine env)
 ```
 You now have a working Docker Machine.
+Now it's started, run this for every tab you open in the terminal to set up environment vars in your terminal
+```
+eval $(docker-machine env)
+```
 
 ### How do I use this lib?
 You can use this for a single site or for multiple apps, up to you, mess with the config!
 
 #### Apache
-The default host is awesome.dev, which will be on your Docker machine's IP (probably 192.168.99.100). In ./build/httpd, you will find an httpd.conf, and an httpd-vhosts.conf. Edit the files to suit, the default vhost looks like this:
+The default host is awesome.scot, which will be on your Docker machine's IP (probably 192.168.99.100). Add that to your own systems /etc/hosts:
+```
+192.168.99.100 awesome.scot
+```
+In ./build/httpd, you will find an httpd.conf, and an httpd-vhosts.conf. Edit the files to suit, the default vhost looks like this:
  ```apacheconfig
 <VirtualHost *:80>
-    ServerName awesome.dev
+    ServerName awesome.scot
     ServerAdmin delboy1978uk@gmail.com
-    DocumentRoot /var/www/html/awesome/public
+    DocumentRoot /var/www/html/public
 
     #SSLEngine on
     #SSLCertificateKeyFile /home/you/ssl.key
@@ -37,7 +43,7 @@ The default host is awesome.dev, which will be on your Docker machine's IP (prob
     #ErrorLog /home/you/log/error.log
     #CustomLog /home/you/log/access.log combined
 
-    <Directory "/var/www/html/awesome">
+    <Directory "/var/www/html">
             DirectoryIndex index.php
             FallbackResource /index.php
             Options -Indexes +FollowSymLinks
@@ -58,10 +64,10 @@ MySQL
 
 If using only one database, fine. If using more than one, remove the database name entry from the Docker compose YAML. Put any build SQL files in build/data. Please see the sample. Note if you didn't specify a DB in the YAML you'll need to perform a grant query in your SQL.
 
-Blah blah, just tell me how to start it!
+Blah blah, just tell me how to start the container!
 ----------------------------------------
 
-Now you've configured your stuff, we use Docker's compose command to build it first. 
+Now you've configured your stuff, we use Docker's compose command to build it first. This is a one off again.
 
 ```
 docker-compose build
@@ -81,22 +87,14 @@ I need to SSH in for something, but wtf?!
 Yes, its all little microcontainers and a bit odd. Here's what you do:
 
 ```
-docker-machine ssh
+docker-compose exec php /bin/bash
 ```
 
-You are in your Docker machine. List the running containers:
-
+Clean up to save space when finished
+------------------------------------
 ```
-docker ps
+docker-compose down
 ```
-
-Look for lamp_php or similar, it will have a container ID. Using the ID to replace the hex below, type:
-
-```
-docker exec -it a64783df502e /bin/bash
-```
-
-Now you can run composer or whatever you need to do. You are sort of SSH'ed in twice, one to the main Docker VM, the other the container.
 
 Shut it down!
 -------------
