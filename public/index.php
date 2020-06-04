@@ -529,6 +529,8 @@
                     <code>DB user <?= $user ;?> with password <?= $password ;?></code><br>
                     <code>MailHog on host awesome.scot ports SMTP 1025 HTTP 8025</code><br>
                     <code>XDebug running on port 9001</code>
+                    <br>
+                    <a class="btn btn-info" href="/info.php"><i class="fa fa-info-circle"></i> PHP Info</a>
                 </div>
             </div>
         </div>
