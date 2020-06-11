@@ -27,6 +27,7 @@ services:
             - mail
         environment:
             APPLICATION_ENV: 'development'
+        user: php:staff
 
     app:
         image: httpd:2.4.38
