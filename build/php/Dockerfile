@@ -9,3 +9,4 @@ RUN chown -R 1000:staff ./composer
 RUN mv ./composer /usr/bin/composer
 RUN useradd --uid 1000 --create-home php
 RUN echo "export PATH=$PATH:bin:vendor/bin" > /home/php/.bashrc
+RUN apt-get -y --no-install-recommends install git

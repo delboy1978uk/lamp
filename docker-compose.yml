@@ -36,7 +36,7 @@ services:
         command: "echo true"
 
     mariadb:
-        image: mariadb:latest
+        image: mariadb:10.5.8
         volumes:
             - ./build/data:/docker-entrypoint-initdb.d
             - db_data:/var/lib/mysql
