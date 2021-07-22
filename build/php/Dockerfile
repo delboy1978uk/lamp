@@ -1,4 +1,4 @@
-FROM delboy1978uk/php80:1.0.0
+FROM delboy1978uk/php80:1.1.0
 #FROM delboy1978uk/php74:1.1.5
 #FROM delboy1978uk/php56:1.0.0
 #COPY ./php.ini /usr/local/etc/php/php.ini
