@@ -32,7 +32,7 @@ services:
     app:
         image: httpd:2.4.38
         volumes:
-            - ./:/var/www/html
+            - ./code:/var/www/html
         command: "echo true"
 
     mariadb:

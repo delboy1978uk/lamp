@@ -30,37 +30,11 @@ and displaying the logs. Press `CTRL-C` to quit, then run the following to tidy 
 docker-compose down
 ```
  ### virtual host
- Apache is set up to serve `awesome.scot` in your browser (or you can change the name in `docker-compose.yml` and rebuild)
- First find out the IP of the Docker machine:
- ```
- docker-machine env
- ```
+ Apache is set up to serve `awesome.scot` with a self signed SSL certificate in your browser (or you can change the name in `docker-compose.yml` and rebuild)
  Edit your `/etc/hosts` file on your computer (`C:\Windows\system32\drivers\etc\hosts` on Windows):
  ```
- 192.168.99.100 awesome.scot
+ 127.0.0.1 awesome.scot
  ```
-#### I've never used Docker - how do I start?
-Docker. Magical voodoo VM tech. Install it. https://github.com/docker/toolbox/releases/tag/v19.03.1<br />
-There are different drivers it can use, we like Virtualbox. Install that too. https://www.virtualbox.org/
-
-This line is a one off. Create your master VM. 
-```
-docker-machine create --driver virtualbox default
-```
-To start it up, type the following
-```
-docker-machine start
-```
-You now have a working Docker Machine. Now that it's started, you need to run this for every tab you open in the terminal 
-in order to set up its environment variables in your terminal.
-```
-eval $(docker-machine env)
-```
-You can now start working with your various docker projects. When you are finished, of course you can stop the Docker 
-machine like so:
-```
-docker-machine stop
-```
 #### customising the setup
 You customise the setup if you need to. PHP and Apache Dockerfiles can be found in the `build` folder. 
 
