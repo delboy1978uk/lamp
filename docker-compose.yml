@@ -32,7 +32,7 @@ services:
     app:
         image: httpd:2.4.38
         volumes:
-            - ./code:/var/www/html
+            - ./code/backend:/var/www/html
         command: "echo true"
 
     mariadb:
@@ -52,3 +52,11 @@ services:
         ports:
             - 1025:1025
             - 8025:8025
+
+    node:
+        build: ./build/node
+        volumes:
+            - ./code/frontend:/app
+        ports:
+            - 8080:8080
+            - 3000:3000
