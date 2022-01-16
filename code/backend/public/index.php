@@ -478,9 +478,9 @@
     </style>
     <link type="text/css" rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css">
     <!-- Fonts -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Javascript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -493,8 +493,8 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" target="_blank" href="http://bonemvc.delboysplace.co.uk/">
-                <i class="fa fa-play-circle"></i>  Try <span class="light">Bone</span> MVC
+            <a class="navbar-brand" target="_blank" href="http://boneframework.delboysplace.co.uk/">
+                <i class="fa fa-play-circle"></i>  Try <span class="light">Bone</span> Framework
             </a>
         </div>
 
@@ -525,10 +525,11 @@
                     <img src="/img/skull_and_crossbones.png" />
                     <h1 class="brand-heading">Dock of the Bay</h1>
                     <code>Apache Server on host awesome.scot ports 80 & 443</code>
+                    <code>PHP 8 with XDebug running on port 9003</code><br>
+                    <code>Node JS dev server running on awesome.scot:3000</code>
                     <code>Maria DB with database <?= $database ;?> on host <?= $host ;?> port 3306</code>
                     <code>DB user <?= $user ;?> with password <?= $password ;?></code><br>
                     <code>MailHog on host awesome.scot ports SMTP 1025 HTTP 8025</code><br>
-                    <code>XDebug running on port 9001</code>
                     <br>&nbsp;<br>
                     <a class="btn btn-info" href="/info.php"><i class="fa fa-info-circle"></i> PHP Info</a>
                 </div>
