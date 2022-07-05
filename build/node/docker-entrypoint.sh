@@ -7,7 +7,7 @@ function initialize()
 
   local returnval=$?
   [[ $returnval -eq 0 ]] \
-  || (echo "[WARNING] React app does not seem to be initialized" && npx create-react-app . && npm start)
+  || (echo "[WARNING] React Native app does not seem to be initialized" && expo init . --template blank && npm start)
 
 
   return $returnval

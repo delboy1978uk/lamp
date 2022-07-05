@@ -57,6 +57,11 @@ services:
         build: ./build/node
         volumes:
             - ./code/frontend:/app
+        environment:
+            - REACT_NATIVE_PACKAGER_HOSTNAME:${DOCKER_GATEWAY_HOST:-host.docker.internal}
         ports:
             - 8080:8080
             - 3000:3000
+            - 19000:19000
+            - 19001:19001
+            - 19002:19002
