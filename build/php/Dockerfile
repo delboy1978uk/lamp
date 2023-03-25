@@ -1,7 +1,5 @@
 FROM delboy1978uk/php81:1.0.1
-#COPY ./php.ini /usr/local/etc/php/php.ini
-COPY ./xdebug_php8.ini /usr/local/etc/php/conf.d/
-#COPY ./xdebug_php5-7.ini /usr/local/etc/php/conf.d/
+COPY ./php-ini-overrides.ini /usr/local/etc/php/conf.d/99-overrides.ini
 COPY ./ssmtp.conf /etc/ssmtp/ssmtp.conf
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --filename=composer

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo '[INFO] Initial deployment script.'
+echo '[INFO] You can add here any tasks to start up your system.'
+echo '[INFO] For example'
+echo '[INFO] docker compose --env-file .env run php composer install'
+echo ''
+echo '[OK] System initialised.'

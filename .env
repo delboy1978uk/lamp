@@ -1,0 +1,1 @@
+APPLICATION_ENV=development

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -z $1 ]; then
+  echo 'usage restart [service]'
+  exit 1
+fi
+
+echo ""
+echo "[INFO] Restarting $1"
+echo ""
+
+docker compose --env-file .env restart $1
