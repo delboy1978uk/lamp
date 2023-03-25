@@ -6,7 +6,9 @@ volumes:
 
 services:
     awesome.scot:
-        build: ./build/httpd
+        build:
+            context: ./build
+            dockerfile: ./httpd/Dockerfile
         links:
             - php
         ports:
@@ -16,7 +18,9 @@ services:
             - app
 
     php:
-        build: ./build/php
+        build:
+            context: ./build
+            dockerfile: ./php/Dockerfile
         ports:
             - 9000
             - 9001
