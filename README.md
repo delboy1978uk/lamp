@@ -11,13 +11,23 @@ A Dockerised LAMP stack
  - Node JS with React (change branch to `feature/react`)
  
  If you've never used Docker before, see the instructions below.code
- 
+
+### requirements
+In order to use this LAMP stack, you must have the following tools installed on your machine.
+- Git
+- Docker
+### installation
+Clone this repository.
+```
+git clone git@github.com:delboy1978uk/lamp.git yourProjectName
+```
 ### setup
 There is a placeholder `public/index.php` in the `code` directory, from which Apache serves your site. You can delete that, and drop in (or symlink) your existing projects into the `code` directory.
  
 ### starting the server
 Simply `cd` into the folder you cloned into and type
 ```
+cd yourProjectName
 bin/start
 ``` 
 Apache logs etc will scroll by, leave this terminal open while you do your work. 
@@ -26,7 +36,7 @@ You can browse to `https://localhost`, or `https://trongate` (if you added to yo
 
 ### running CLI commands
 The docker PHP container is an actual Linux installation. Regardless of your platform, if you would like to run CLI 
-commands, you can type:
+commands like any PHP console commands etc, you can type:
 ```
 bin/terminal php
 ```

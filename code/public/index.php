@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', true);
     $database   = 'awesome';
     $user = 'dbuser';
     $password = "[123456]";
@@ -297,7 +297,7 @@
             padding: 100px 0;
             text-align: center;
             color: #fff;
-            background: url(/img/intro-bg.jpg) no-repeat bottom center scroll;
+            background: url(/img/earth2hq.jpg) no-repeat bottom center scroll;
             background-color: #000;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -469,11 +469,14 @@
             font-size: 70px;
         }
         html body code, html body div.code {
-            color: #00ff00;
+            color: #6767d1;
             white-space: pre;
-            background-color: #003300;
+            background-color: #000033;
             border-radius: 4px;
             font-size: 16px;
+        }
+        .logo {
+            width: 300px;
         }
     </style>
     <link type="text/css" rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css">
@@ -493,8 +496,8 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" target="_blank" href="//boneframework.delboysplace.co.uk/">
-                <i class="fa fa-play-circle"></i>  Try <span class="light">Bone</span> Framework
+            <a class="navbar-brand" target="_blank" href="//trongate.io">
+                <i class="fa fa-play-circle"></i>  Try <span class="light">Trongate</span>
             </a>
         </div>
 
@@ -503,10 +506,7 @@
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="page-scroll">
-                    <a target="_blank" href="http://awesome.scot:8025/"><i class="fa fa-envelope"></i> MailHog</a>
-                </li>
-                <li class="page-scroll">
-                    <a target="_blank" href="https://github.com/delboy1978uk/lamp"><i class="fa fa-github"></i> Fork</a>
+                    <a target="_blank" href="//trongate:8025/"><i class="fa fa-envelope"></i> MailHog</a>
                 </li>
             </ul>
         </div>
@@ -522,12 +522,12 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <br><br><br>
-                    <img src="/img/skull_and_crossbones.png" />
+                    <img alt="Tronmgate Framework" class="logo" src="/img/trongate_logo_trans_bg.png" />
                     <h1 class="brand-heading">Dock of the Bay</h1>
-                    <code>Apache Server on host awesome.scot ports 80 & 443</code>
+                    <code>Apache Server on host https://trongate</code>
                     <code>Maria DB with database <?= $database ;?> on host <?= $host ;?> port 3306</code>
                     <code>DB user <?= $user ;?> with password <?= $password ;?></code><br>
-                    <code>MailHog on host awesome.scot ports SMTP 1025 HTTP 8025</code><br>
+                    <code>MailHog on host trongate ports SMTP 1025 HTTP 8025</code><br>
                     <code>XDebug running on port 9003</code>
                     <br>&nbsp;<br>
                     <a class="btn btn-info" href="/info.php"><i class="fa fa-info-circle"></i> PHP Info</a>
