@@ -54,3 +54,11 @@ services:
         ports:
             - 1025:1025
             - 8025:8025
+
+    phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 8080:80
+        environment:
+            - PMA_ARBITRARY=1

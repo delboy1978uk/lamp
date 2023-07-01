@@ -508,6 +508,9 @@ ini_set('display_errors', true);
                 <li class="page-scroll">
                     <a target="_blank" href="//trongate:8025/"><i class="fa fa-envelope"></i> MailHog</a>
                 </li>
+                <li class="page-scroll">
+                    <a target="_blank" href="//trongate:8025/"><i class="fa fa-info-circle"></i> PHP INFO;</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -523,14 +526,13 @@ ini_set('display_errors', true);
                 <div class="col-md-8 col-md-offset-2">
                     <br><br><br>
                     <img alt="Tronmgate Framework" class="logo" src="/img/trongate_logo_trans_bg.png" />
-                    <h1 class="brand-heading">Dock of the Bay</h1>
+                    <h1 class="brand-heading">LAMP server</h1>
                     <code>Apache Server on host https://trongate</code>
                     <code>Maria DB with database <?= $database ;?> on host <?= $host ;?> port 3306</code>
                     <code>DB user <?= $user ;?> with password <?= $password ;?></code><br>
+                    <code>PHPMyAdmin on http://trongate:8080</code><br>
                     <code>MailHog on host trongate ports SMTP 1025 HTTP 8025</code><br>
                     <code>XDebug running on port 9003</code>
-                    <br>&nbsp;<br>
-                    <a class="btn btn-info" href="/info.php"><i class="fa fa-info-circle"></i> PHP Info</a>
                 </div>
             </div>
         </div>

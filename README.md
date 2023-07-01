@@ -33,7 +33,12 @@ bin/start
 Apache logs etc will scroll by, leave this terminal open while you do your work. 
 
 You can browse to `https://localhost`, or `https://trongate` (if you added to your `/etc/hosts`, see below, you can customise this domain)
-
+### phpmyadmin
+You can access PHPMyAdmin via either `https://localhost:8080`, or `https://trongate:8080`. When you first visit there, 
+use the following cvredentials:
+- host - mariadb
+- user - dbuser
+- password - [123456]
 ### running CLI commands
 The docker PHP container is an actual Linux installation. Regardless of your platform, if you would like to run CLI 
 commands like any PHP console commands etc, you can type:
@@ -46,11 +51,11 @@ To run commands without going into the Linux terminal, you can use the run comma
 ```
 bin/run composer install
 ```
-To restart any service, call the following:
+To restart any service (services are defined in the `docker-compose.yml`), call the following:
 ```
 bin/restart [service]
 ```
-If you change the docker config (see belw), you can quickly rebuild using this:
+If you change the docker config (see below), you can quickly rebuild using this:
 ```
 bin/rebuild
 ```
