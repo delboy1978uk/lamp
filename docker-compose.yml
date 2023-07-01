@@ -5,7 +5,7 @@ volumes:
         driver: local
 
 services:
-    awesome.scot:
+    trongate:
         build:
             context: ./build
             dockerfile: ./httpd/Dockerfile
@@ -29,8 +29,6 @@ services:
         links:
             - mariadb
             - mail
-        environment:
-            APPLICATION_ENV: '${APPLICATION_ENV}'
         user: php:staff
 
     app:

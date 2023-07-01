@@ -1,4 +1,4 @@
-lamp 
+Trongate LAMP Stack 
 ====
 
 A Dockerised LAMP stack
@@ -6,7 +6,7 @@ A Dockerised LAMP stack
  - Docker based Linux server
  - Apache with self signed SSL certificate
  - MariaDB
- - PHP 8.1 and modules (see https://github.com/delboy1978uk/dockerhub/blob/master/php81/Dockerfile)
+ - PHP 8.1 and modules
  - MailHog (port 1025 send, port 8025 in browser)
  - Node JS with React (change branch to `feature/react`)
  
@@ -14,8 +14,6 @@ A Dockerised LAMP stack
  
 ### setup
 There is a placeholder `public/index.php` in the `code` directory, from which Apache serves your site. You can delete that, and drop in (or symlink) your existing projects into the `code` directory.
-
-If you are using the `feature/react` branch of this repository, note that the PHP code will go in `code/backend` and not just code, and the react app will go in `code/frontend`.
  
 ### starting the server
 Simply `cd` into the folder you cloned into and type
@@ -24,16 +22,19 @@ bin/start
 ``` 
 Apache logs etc will scroll by, leave this terminal open while you do your work. 
 
-You can browse to `https://localhost`, or `https://awesome.scot` (if you added to your `/etc/hosts`, see below, you can customise this domain)
+You can browse to `https://localhost`, or `https://trongate` (if you added to your `/etc/hosts`, see below, you can customise this domain)
 
 ### running CLI commands
-To run commands such as composer from the terminal that are in your Docker box, you can use the run command:
+The docker PHP container is an actual Linux installation. Regardless of your platform, if you would like to run CLI 
+commands, you can type:
+```
+bin/terminal php
+```
+This will place you in the Linux shell of the PHP service configured in `docker-compose.yml` file.
+
+To run commands without going into the Linux terminal, you can use the run command:
 ```
 bin/run composer install
-```
-If you would like to enter the container and run commands from inside, you can type:
-```
-bin/terminal
 ```
 To restart any service, call the following:
 ```
@@ -55,16 +56,16 @@ and displaying the logs. Press `CTRL-C` to quit, then run the following to tidy 
 bin/stop
 ```
  ### virtual host
- Apache is set up to serve `awesome.scot` with a self signed SSL certificate in your browser (or you can change the name in `docker-compose.yml` and rebuild)
+ Apache is set up to serve `trongate` with a self signed SSL certificate in your browser (or you can change the name in `docker-compose.yml` and rebuild)
  Edit your `/etc/hosts` file on your computer (`C:\Windows\system32\drivers\etc\hosts` on Windows), adding this line:
  ```
- 127.0.0.1 awesome.scot
+ 127.0.0.1 trongate
  ```
 ### customising the setup
 You customise the setup if you need to. PHP and Apache Dockerfiles can be found in the `build` folder. 
 
 You will notice a file named ssmtp.conf. This LAMP stack uses Mailhog, so you can check all would-have-been-sent emails 
-by going to `awesome.scot:8025`.
+by going to `trongate:8025`.
 
 There is a `.env` file which you add to
 
