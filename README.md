@@ -8,7 +8,7 @@ A Dockerised LAMP stack
  - MariaDB
  - PHP 8.1 and modules (see https://github.com/delboy1978uk/dockerhub/blob/master/php81/Dockerfile)
  - MailHog (port 1025 send, port 8025 in browser)
- - Node JS with React (change branch to `feature/react`)
+ - NodeJs 18
  
  If you've never used Docker before, see the instructions below.code
  
@@ -31,9 +31,13 @@ To run commands such as composer from the terminal that are in your Docker box, 
 ```
 bin/run composer install
 ```
+To run npm or npx from the node container you can call `runnode`:
+```
+runnode npm ci --save-all
+```
 If you would like to enter the container and run commands from inside, you can type:
 ```
-bin/terminal
+bin/terminal [service]
 ```
 To restart any service, call the following:
 ```
