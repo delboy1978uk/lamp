@@ -33,6 +33,14 @@ services:
             APPLICATION_ENV: '${APPLICATION_ENV}'
         user: php:staff
 
+    node:
+        image: node:18.6
+        volumes_from:
+            - app
+        ports:
+            - 8080:8080
+            - 3000:3000
+
     app:
         image: httpd:2.4.38
         volumes:

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -z $1 ]; then
+  echo 'usage runnode [COMMAND]'
+  exit 1
+fi
+
+docker compose --env-file .env run node $@
