@@ -34,7 +34,7 @@ services:
         user: php:staff
 
     node:
-        image: node:18.6
+        build: ./build/node
         volumes_from:
             - app
         ports:
