@@ -9,8 +9,6 @@ services:
         build:
             context: ./build
             dockerfile: ./httpd/Dockerfile
-        links:
-            - php
         ports:
             - 80:80
             - 443:443
@@ -26,9 +24,6 @@ services:
             - 9001
         volumes_from:
             - app
-        links:
-            - mariadb
-            - mail
         environment:
             APPLICATION_ENV: '${APPLICATION_ENV}'
         user: php:staff
