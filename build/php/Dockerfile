@@ -1,4 +1,4 @@
-FROM delboy1978uk/php81:1.1.0
+FROM delboy1978uk/php83:1.0.0
 COPY ./php/php-ini-overrides.ini /usr/local/etc/php/conf.d/99-overrides.ini
 COPY ./php/ssmtp.conf /etc/ssmtp/ssmtp.conf
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
