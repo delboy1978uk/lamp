@@ -1,3 +1,6 @@
+# abandoned
+Please use https://github.com/boneframework/lamp instead
+
 lamp 
 ====
 
